@@ -25,11 +25,35 @@ Developed by: POOJA PRIYA.B
 RegisterNumber: 212224230196
 */
 ```
-<img width="1384" height="686" alt="image" src="https://github.com/user-attachments/assets/38b33c7c-c00b-4331-869e-0e86bbcf2c98" />
+```
+import numpy as np
+import matplotlib.pyplot as plt
+X = np.array(eval(input()))
+Y = np.array(eval(input()))
+X_mean = np.mean(X)
+Y_mean = np.mean(Y)
+num =0
+denom=0
 
+for i in range(len(X)):
+    num+=(X[i] -X_mean)* (Y[i] -Y_mean)
+    denom+= (X[i] - X_mean)**2
+
+m= num/denom
+b=Y_mean-m*X_mean
+
+print(m,b)
+Y_predicted= m*X+b
+print(Y_predicted)
+
+plt.scatter(X,Y)
+plt.plot(X,Y_predicted,color='red')
+plt.show()
+```
 
 ## Output:
-<img width="909" height="662" alt="image" src="https://github.com/user-attachments/assets/05352126-7b14-4adc-9179-2e75a3d640e5" />
+
+<img width="718" height="575" alt="image" src="https://github.com/user-attachments/assets/fabe077a-867d-4b66-baba-b74d6d7002b1" />
 
 
 ## Result:
